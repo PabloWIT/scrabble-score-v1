@@ -12,11 +12,16 @@ private val scrabbleScore = ScrabbleScore();
 
 fun main(args: Array<String>) {
     scrabbleScore.letterValues()
-    while (true) {
-        print("Enter a word and compute the Scrabble Score: ")
+    while(true) {
+        print("Enter a word and compute the Scrabble Score (-1 to end): ")
         val word = input.nextLine()
         //TODO change to use a string template:
-        println("$word has a value of + ${scrabbleScore.scoreWord(word)}")
+        if(word.equals("-1")) {
+            println("Shutting down program")
+            return
+        } else {
+            println("$word has a value of + ${scrabbleScore.scoreWord(word)}")
+        }
     }
 }
 
